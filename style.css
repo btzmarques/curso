@@ -163,3 +163,101 @@ html {
     height: 315px;
     border-radius: 10px;
 }
+
+/* Responsividade geral para telas menores */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+/* Responsividade para telas médias (tablets e dispositivos móveis) */
+@media (max-width: 768px) {
+    .navbar nav {
+        flex-direction: column; /* Alinha os itens do menu verticalmente */
+        gap: 20px;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os links do menu */
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 16px; /* Ajusta o tamanho da fonte */
+    }
+
+    .hero h1 {
+        font-size: 3rem; /* Ajusta o tamanho do título */
+    }
+
+    .sobre {
+        padding: 2rem;
+        margin-bottom: 2rem; /* Garante espaçamento abaixo da seção "Sobre" */
+    }
+
+    /* Ajustando a seção de vídeos */
+    .videos {
+        padding: 50px 20px; /* Ajuste do padding */
+        text-align: center;
+    }
+
+    .video-item {
+        display: block; /* Alterando para block para garantir que não fiquem lado a lado */
+        margin: 20px 0; /* Adiciona espaçamento entre os vídeos */
+        opacity: 1; /* Garante que os vídeos apareçam */
+    }
+
+    .video-item .video {
+        width: 100%;
+        height: auto;
+    }
+
+    .video-item iframe {
+        width: 100%;
+        height: 300px; /* Ajustando a altura dos vídeos */
+        border-radius: 10px;
+    }
+
+    .video-item .info {
+        padding: 1rem;
+        text-align: left;
+    }
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Ajusta ainda mais o tamanho do título */
+    }
+
+    .navbar a {
+        font-size: 14px; /* Ajusta o tamanho da fonte do menu */
+    }
+
+    .sobre p {
+        font-size: 18px; /* Ajusta o tamanho do texto na seção "Sobre" */
+    }
+
+    .video-item iframe {
+        height: 250px; /* Ajusta a altura dos vídeos */
+    }
+
+    .video-item .info {
+        padding: 1rem; /* Ajusta o padding para telas pequenas */
+    }
+}
