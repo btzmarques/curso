@@ -1,314 +1,187 @@
-/* Geral */
-body {
-  margin: 0;
-  background-color: #1C1C1C; /* A9A9A9 */
-  color: #fff;
-  font-family: Arial, sans-serif;
-  scroll-behavior: smooth; /* Scroll suave */
+/* RESET GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* HTML base */
 html {
-    scroll-padding-top: 70px; /* Alinha o início da seção com o topo da página considerando a altura do cabeçalho fixo */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
-/* Cabeçalho */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
 .navbar {
+    width: 100%;
+    background: #000; /* Preto */
+    padding: 1.5rem 2rem;
     position: fixed;
     top: 0;
-    width: 100%;
-    background-color: #1C1C1C; /* 696969 */
+    left: 0;
     z-index: 1000;
-    transition: background-color 0.3s;
 }
 
 .navbar nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70px; /* altura do cabeçalho */
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+    gap: 3rem;
 }
 
 .navbar a {
-    color: #1E90FF; /* 40E0D0 */
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
+    font-size: 2rem;
 }
 
-.navbar a:hover {
-    color: #ffffff;
-}
-
-/* Área de boas-vindas */
+/* HERO */
 .hero {
+    width: 100%;
+    height: 100vh;
+    background: url('caminho-da-sua-imagem.jpg') no-repeat center center/cover;
     position: relative;
-    width: 100%;
-    height: 92vh;
-    background: url(imagens/sua-imagem1.jpg) no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 60px; /* Espaço para o cabeçalho fixo */
-}
-
-.overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* 808080 */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero h1 {
-    font-size: 48px;
-    text-align: center;
-}
-
-.hero h1 span {
-    color: #1E90FF; /* 40E0D0 */
-}
-
-/* Seção Sobre */
-.sobre {
-    padding: 40px 140px;
-    margin: 0 auto;
-    background-color: #363636;
-    color: #fff;
-    text-align: justify; /* Alinha o texto de forma justificada */
-    height: 80vh;
-}
-
-.sobre h2 {
-    font-size: 36px;
-    text-indent: 30px;
-    margin-bottom: 20px;
-}
-
-.sobre p {
-    font-size: 20px;
-    line-height: 1.6;
-    text-indent: 50px;
-}
-
-/* Animação para a seção "Sobre" */
-.sobre.hidden {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.sobre.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Seção de vídeos */
-.videos {
-    padding: 100px 20px 50px 20px;
-    text-align: center;
-}
-
-/* Cada item de vídeo */
-.video-item {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: 50px 0;
-    gap: 30px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-}
-
-.video-item ul {
-    display: flex;
-    flex-direction: column; /* Empilha as li verticalmente */
-    gap: 20px; /* Define o espaçamento entre as li */
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
-.video-item li {
-    flex: 0 0 auto; /* Garante que as li não vão se expandir */
-}
-
-.video-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.video-item .video {
-    flex: 1 1 500px;
-}
-
-.video-item .info {
-    flex: 1 1 300px;
-    text-align: left;
-}
-
-.video-item iframe {
-    width: 100%;
-    max-width: 560px;
-    height: 315px;
-    border-radius: 10px;
-}
-
-/* Geral para telas menores */
-@media (max-width: 991px) {
-    html {
-        font-size: 55%;
-    }
-
-    /* Navbar continua lado a lado e fixa */
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-        background: #000; /* Fundo preto */
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    .navbar nav {
-        display: flex;
-        gap: 2rem;
-    }
-
-    .navbar ul {
-        display: flex;
-        flex-direction: row; /* Mantém os itens lado a lado */
-        align-items: center;
-        gap: 2rem;
-        list-style: none;
-    }
-
-    .navbar a {
-        font-size: 16px;
-        color: white; /* Cor dos links */
-        text-decoration: none;
-    }
-
-    section {
-        padding: 6rem 2rem 2rem; /* Topo maior pra compensar o header fixo */
-    }
-}
-
-/* Ajustes para hero (overlay) */
-.hero {
-    position: relative;
-    min-height: 100vh; /* Ocupa 100% da altura da tela */
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    overflow: hidden;
 }
 
 .hero .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente */
+    background: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+}
+
+.hero h1 {
+    position: relative;
+    color: white;
+    font-size: 5rem;
     z-index: 1;
 }
 
-/* Texto do hero */
-.hero h1 {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    font-size: 5rem;
+/* SOBRE */
+.sobre {
+    width: 100%;
+    background: #eee; /* Cinza claro */
+    padding: 5rem 2rem;
+    text-align: center;
 }
 
-/* Ajustes para telas menores */
+.sobre h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.sobre p {
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+/* VÍDEOS */
+.videos {
+    width: 100%;
+    background: #fff;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.videos h2 {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+}
+
+.video-item {
+    margin-bottom: 4rem;
+}
+
+.video-item iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.video-item .info {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+}
+
 @media (max-width: 768px) {
     html {
         font-size: 52%;
     }
 
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar a {
+        font-size: 1.8rem;
+    }
+
     .hero h1 {
-        font-size: 3.5rem; /* Um pouco menor */
-    }
-
-    /* Sobre */
-    .sobre {
-        background: #f1f1f1; /* Fundo cinza */
-        padding: 4rem 2rem;
-        width: 100%;
-        box-sizing: border-box;
-        margin-bottom: 4rem; /* Espaço depois do sobre */
-    }
-
-    .sobre p {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        line-height: 1.5;
-    }
-
-    /* Vídeos */
-    .videos {
-        padding: 4rem 2rem;
+        font-size: 4rem;
         text-align: center;
     }
 
+    .sobre h2,
     .videos h2 {
-        font-size: 3.5rem; /* Aumentado para celular */
-        margin-bottom: 3rem;
+        font-size: 3.5rem;
     }
 
-    .video-item {
-        display: block;
-        margin: 20px 0;
+    .sobre p,
+    .video-item .info {
+        font-size: 2rem;
     }
 
     .video-item iframe {
-        width: 100%;
         height: 300px;
-        border-radius: 10px;
-    }
-
-    .video-item .info {
-        padding: 2rem;
-        font-size: 2rem; /* Textos maiores nos celulares */
-        text-align: left;
     }
 }
 
-/* Para celulares bem pequenos */
 @media (max-width: 450px) {
     html {
         font-size: 50%;
+    }
+
+    .navbar nav {
+        gap: 2rem;
+    }
+
+    .navbar a {
+        font-size: 1.6rem;
     }
 
     .hero h1 {
         font-size: 3rem;
     }
 
+    .sobre h2,
     .videos h2 {
-        font-size: 3rem; /* Ainda legível no celular */
+        font-size: 3rem;
+    }
+
+    .sobre p,
+    .video-item .info {
+        font-size: 1.8rem;
     }
 
     .video-item iframe {
         height: 250px;
-    }
-
-    .video-item .info {
-        font-size: 1.8rem;
     }
 }
