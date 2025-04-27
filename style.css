@@ -164,139 +164,151 @@ html {
     border-radius: 10px;
 }
 
-/* Responsividade geral para telas menores */
+/* Geral para telas menores */
 @media (max-width: 991px) {
     html {
         font-size: 55%;
     }
 
+    /* Navbar continua lado a lado e fixa */
     .navbar {
-        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background: #000; /* Fundo preto */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
     }
 
-    section {
-        padding: 2rem;
-    }
-
-    /* Ajuste para manter a navbar em linha mesmo em telas menores */
     .navbar nav {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        gap: 2rem;
     }
 
     .navbar ul {
-        flex-direction: row; /* Deixa o menu lado a lado */
+        display: flex;
+        flex-direction: row; /* Mantém os itens lado a lado */
+        align-items: center;
         gap: 2rem;
+        list-style: none;
     }
 
     .navbar a {
         font-size: 16px;
+        color: white; /* Cor dos links */
+        text-decoration: none;
     }
 
-    /* Garante que o header fique fixo */
-    .navbar {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: var(--black); /* Certifique-se de ter uma variável --black, ou troque por #000 */
-        z-index: 1000;
+    section {
+        padding: 6rem 2rem 2rem; /* Topo maior pra compensar o header fixo */
     }
 }
 
-/* Responsividade para telas médias (tablets e dispositivos móveis) */
-@media (max-width: 768px) {
+/* Ajustes para hero (overlay) */
+.hero {
+    position: relative;
+    min-height: 100vh; /* Ocupa 100% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
 
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fundo preto semi-transparente */
+    z-index: 1;
+}
+
+/* Texto do hero */
+.hero h1 {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 5rem;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
     html {
         font-size: 52%;
     }
-    
-    .navbar nav {
-        flex-direction: column; /* Alinha os itens do menu verticalmente */
-        gap: 20px;
-    }
-
-    .navbar ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centraliza os links do menu */
-        gap: 15px;
-    }
-
-    .navbar a {
-        font-size: 16px; /* Ajusta o tamanho da fonte */
-    }
-
-    .hero {
-        min-height: 100vh; /* Faz o fundo ocupar toda a altura da tela */
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
 
     .hero h1 {
-        font-size: 3rem; /* Ajusta o tamanho do título */
+        font-size: 3.5rem; /* Um pouco menor */
     }
 
+    /* Sobre */
     .sobre {
-        padding: 2rem;
-        margin-bottom: 2rem; /* Garante espaçamento abaixo da seção "Sobre" */
+        background: #f1f1f1; /* Fundo cinza */
+        padding: 4rem 2rem;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 4rem; /* Espaço depois do sobre */
     }
 
-    /* Ajustando a seção de vídeos */
+    .sobre p {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+
+    /* Vídeos */
     .videos {
-        padding: 50px 20px; /* Ajuste do padding */
+        padding: 4rem 2rem;
         text-align: center;
     }
 
-    .video-item {
-        display: block; /* Alterando para block para garantir que não fiquem lado a lado */
-        margin: 20px 0; /* Adiciona espaçamento entre os vídeos */
-        opacity: 1; /* Garante que os vídeos apareçam */
+    .videos h2 {
+        font-size: 3.5rem; /* Aumentado para celular */
+        margin-bottom: 3rem;
     }
 
-    .video-item .video {
-        width: 100%;
-        height: auto;
+    .video-item {
+        display: block;
+        margin: 20px 0;
     }
 
     .video-item iframe {
         width: 100%;
-        height: 300px; /* Ajustando a altura dos vídeos */
+        height: 300px;
         border-radius: 10px;
     }
 
     .video-item .info {
-        padding: 1.5rem;
+        padding: 2rem;
+        font-size: 2rem; /* Textos maiores nos celulares */
         text-align: left;
-        font-size: 2rem; /* Aumentei o tamanho do texto info */
     }
 }
 
-/* Responsividade para telas pequenas (celulares) */
+/* Para celulares bem pequenos */
 @media (max-width: 450px) {
     html {
         font-size: 50%;
     }
 
     .hero h1 {
-        font-size: 2.5rem; /* Ajusta ainda mais o tamanho do título */
+        font-size: 3rem;
     }
 
-    .navbar a {
-        font-size: 14px; /* Ajusta o tamanho da fonte do menu */
-    }
-
-    .sobre p {
-        font-size: 18px; /* Ajusta o tamanho do texto na seção "Sobre" */
+    .videos h2 {
+        font-size: 3rem; /* Ainda legível no celular */
     }
 
     .video-item iframe {
-        height: 250px; /* Ajusta a altura dos vídeos */
+        height: 250px;
     }
 
     .video-item .info {
-        padding: 1rem; /* Ajusta o padding para telas pequenas */
         font-size: 1.8rem;
     }
 }
