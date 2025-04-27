@@ -177,10 +177,40 @@ html {
     section {
         padding: 2rem;
     }
+
+    /* Ajuste para manter a navbar em linha mesmo em telas menores */
+    .navbar nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar ul {
+        flex-direction: row; /* Deixa o menu lado a lado */
+        gap: 2rem;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    /* Garante que o header fique fixo */
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--black); /* Certifique-se de ter uma variável --black, ou troque por #000 */
+        z-index: 1000;
+    }
 }
 
 /* Responsividade para telas médias (tablets e dispositivos móveis) */
 @media (max-width: 768px) {
+
+    html {
+        font-size: 52%;
+    }
+    
     .navbar nav {
         flex-direction: column; /* Alinha os itens do menu verticalmente */
         gap: 20px;
@@ -195,6 +225,13 @@ html {
 
     .navbar a {
         font-size: 16px; /* Ajusta o tamanho da fonte */
+    }
+
+    .hero {
+        min-height: 100vh; /* Faz o fundo ocupar toda a altura da tela */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .hero h1 {
@@ -230,8 +267,9 @@ html {
     }
 
     .video-item .info {
-        padding: 1rem;
+        padding: 1.5rem;
         text-align: left;
+        font-size: 2rem; /* Aumentei o tamanho do texto info */
     }
 }
 
@@ -242,7 +280,7 @@ html {
     }
 
     .hero h1 {
-        font-size: 2rem; /* Ajusta ainda mais o tamanho do título */
+        font-size: 2.5rem; /* Ajusta ainda mais o tamanho do título */
     }
 
     .navbar a {
@@ -259,5 +297,6 @@ html {
 
     .video-item .info {
         padding: 1rem; /* Ajusta o padding para telas pequenas */
+        font-size: 1.8rem;
     }
 }
