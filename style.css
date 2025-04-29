@@ -168,11 +168,75 @@ html {
     text-align: left;
 }
 
+/* 
 .video-item iframe {
     width: 100%;
     max-width: 560px;
     height: 315px;
     border-radius: 10px;
+} */
+
+iframe {
+    width: 100%;
+    height: auto;
+    max-width: 80%;  /* Faz com que o iframe ocupe toda a largura disponível */
+    aspect-ratio: 16/9;  /* Mantém a proporção do vídeo */
+}
+
+
+/* Rodapé */
+.rodape {
+  background-color: #363636;
+  color: #ccc;
+  padding: 20px 10px;
+  font-size: 16px;
+  /* border-top: 1px solid #4F4F4F; */
+}
+
+.container-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto 10px;
+}
+
+.logo-e-nome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo-rodape {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.links-sociais a {
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.links-sociais img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.links-sociais img:hover {
+  transform: scale(1.1);
+}
+
+.direitos {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #aaa;
 }
 
 /* Responsividade geral para telas menores */
@@ -246,6 +310,44 @@ html {
     }
 }
 
+@media (max-width: 600px) {
+    .container-rodape {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .videos h2 {
+        font-size: 32px; /* Ajusta o tamanho do h2 */
+    }
+
+    .video-item iframe {
+        height: 250px; /* Ajusta a altura dos vídeos */
+    }
+
+    .video-item .info {
+        padding: 1rem; /* Ajusta o padding para telas pequenas */
+    }
+
+    /* AUMENTAR textos da seção de vídeos */
+
+    .videos h2 {
+        font-size: 32px; /* Ajusta o tamanho do h2 */
+    }
+    
+    .video-item .info h3 {
+        font-size: 20px !important; /* Aumenta o título do vídeo */
+    }
+
+    .video-item .info p {
+        font-size: 20px !important; /* Aumenta os parágrafos */
+    }
+
+    .video-item .info ul {
+        font-size: 20px !important; /* Aumenta a lista de tópicos */
+    }
+}
+
 /* Responsividade para telas pequenas (celulares) */
 @media (max-width: 450px) {
     html {
@@ -257,7 +359,7 @@ html {
     }
 
     .navbar a {
-        font-size: 30px; /* Ajusta o tamanho da fonte do menu - 18px*/
+        font-size: 50px; /* Ajusta o tamanho da fonte do menu - 18px - 30px*/
     }
 
     .navbar nav {
@@ -277,6 +379,10 @@ html {
         font-size: 18px; /* Ajusta o tamanho do texto na seção "Sobre" */
     }
 
+    .videos h2 {
+        font-size: 32px; /* Ajusta o tamanho do h2 */
+    }
+
     .video-item iframe {
         height: 250px; /* Ajusta a altura dos vídeos */
     }
@@ -287,18 +393,14 @@ html {
 
     /* AUMENTAR textos da seção de vídeos */
     .video-item .info h3 {
-        font-size: 22px !important; /* Aumenta o título do vídeo */
+        font-size: 48px !important; /* Aumenta o título do vídeo */
     }
 
     .video-item .info p {
-        font-size: 18px !important; /* Aumenta os parágrafos */
+        font-size: 22px !important; /* Aumenta os parágrafos */
     }
 
     .video-item .info ul {
-        font-size: 18px !important; /* Aumenta a lista de tópicos */
-    }
-
-    .videos h2 {
-        font-size: 28px !important; /* Ajusta o tamanho do h2 */
+        font-size: 22px !important; /* Aumenta a lista de tópicos */
     }
 }
