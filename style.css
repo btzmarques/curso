@@ -266,6 +266,7 @@ iframe {
         flex-direction: column;
         align-items: center; /* Centraliza os links do menu */
         gap: 15px;
+        font-size: 12px;
     }
 
     .navbar a {
@@ -317,6 +318,14 @@ iframe {
       gap: 15px;
     }
 
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os links do menu */
+        gap: 15px;
+        font-size: 12px;
+    }
+
     .videos h2 {
         font-size: 32px; /* Ajusta o tamanho do h2 */
     }
@@ -352,6 +361,14 @@ iframe {
 @media (max-width: 450px) {
     html {
         font-size: 50%;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os links do menu */
+        gap: 15px;
+        font-size: 12px;
     }
 
     .hero h1 {
