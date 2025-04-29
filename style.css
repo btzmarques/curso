@@ -35,13 +35,14 @@ html {
     gap: 30px;
     margin: 0;
     padding: 0;
+    flex-direction: row; /* Sempre linha */
 }
 
 .navbar a {
     color: #1E90FF; /* 40E0D0 */
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .navbar a:hover {
@@ -85,7 +86,7 @@ html {
     background-color: #363636;
     color: #fff;
     text-align: justify; /* Alinha o texto de forma justificada */
-    height: 80vh;
+    /* height: 90vh; */
 }
 
 .sobre h2 {
@@ -98,6 +99,15 @@ html {
     font-size: 20px;
     line-height: 1.6;
     text-indent: 50px;
+}
+
+.sobre .atencao {
+    color: #ff0000;
+}
+
+.sobre p span {
+    color: #1E90FF; /* 40E0D0 */
+    font-weight: bold;
 }
 
 /* Animação para a seção "Sobre" */
@@ -247,7 +257,20 @@ html {
     }
 
     .navbar a {
-        font-size: 14px; /* Ajusta o tamanho da fonte do menu */
+        font-size: 30px; /* Ajusta o tamanho da fonte do menu - 18px*/
+    }
+
+    .navbar nav {
+        flex-direction: row; /* continua linha */
+        flex-wrap: wrap; /* pode quebrar se faltar espaço */
+        justify-content: center;
+    }
+
+    .navbar ul {
+        flex-direction: row; /* continua linha */
+        flex-wrap: wrap; /* quebra para segunda linha se necessário */
+        justify-content: center;
+        gap: 10px;
     }
 
     .sobre p {
@@ -260,5 +283,22 @@ html {
 
     .video-item .info {
         padding: 1rem; /* Ajusta o padding para telas pequenas */
+    }
+
+    /* AUMENTAR textos da seção de vídeos */
+    .video-item .info h3 {
+        font-size: 22px !important; /* Aumenta o título do vídeo */
+    }
+
+    .video-item .info p {
+        font-size: 18px !important; /* Aumenta os parágrafos */
+    }
+
+    .video-item .info ul {
+        font-size: 18px !important; /* Aumenta a lista de tópicos */
+    }
+
+    .videos h2 {
+        font-size: 28px !important; /* Ajusta o tamanho do h2 */
     }
 }
