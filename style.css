@@ -240,7 +240,7 @@ iframe {
 }
 
 /* Responsividade geral para telas menores */
-@media (max-width: 991px) {
+@media (max-width: 991px) { /* Laptops pequenos / tablets paisagem */
     html {
         font-size: 55%;
     }
@@ -255,7 +255,7 @@ iframe {
 }
 
 /* Responsividade para telas médias (tablets e dispositivos móveis) */
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Tablets e celulares grandes */
     .navbar nav {
         flex-direction: column; /* Alinha os itens do menu verticalmente */
         gap: 20px;
@@ -270,14 +270,16 @@ iframe {
     }
 
     .navbar a {
-        font-size: 16px; /* Ajusta o tamanho da fonte */
+        font-size: 18px; /* Ajusta o tamanho da fonte */
     }
 
     .hero h1 {
-        font-size: 3rem; /* Ajusta o tamanho do título */
+        font-size: 32px /* 3rem; /* Ajusta o tamanho do título */
     }
 
     .sobre {
+        padding: 30px 20px;
+        /*
         padding: 2rem;
         margin-bottom: 2rem; /* Garante espaçamento abaixo da seção "Sobre" */
     }
@@ -292,6 +294,7 @@ iframe {
         display: block; /* Alterando para block para garantir que não fiquem lado a lado */
         margin: 20px 0; /* Adiciona espaçamento entre os vídeos */
         opacity: 1; /* Garante que os vídeos apareçam */
+        flex-direction: column;
     }
 
     .video-item .video {
@@ -308,10 +311,11 @@ iframe {
     .video-item .info {
         padding: 1rem;
         text-align: left;
+        text-align: center;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* Smartphones médios/grandes */
     .container-rodape {
       flex-direction: column;
       align-items: center;
@@ -358,7 +362,7 @@ iframe {
 }
 
 /* Responsividade para telas pequenas (celulares) */
-@media (max-width: 450px) {
+@media (max-width: 450px) { /* Smartphones pequenos */
     html {
         font-size: 50%;
     }
