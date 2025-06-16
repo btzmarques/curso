@@ -1,126 +1,427 @@
-*{
+/* Geral */
+
+body {
+    margin: 0;
+    background-color: #1C1C1C; /* A9A9A9 */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Scroll suave */
+}
+
+html {
+    scroll-padding-top: 70px; /* Alinha o início da seção com o topo da página considerando a altura do cabeçalho fixo */
+}
+
+/* Cabeçalho */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1C1C1C; /* 696969 */
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.navbar nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px; /* altura do cabeçalho */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+    flex-direction: row; /* Sempre linha */
+}
+
+.navbar a {
+    color: #1E90FF; /* 40E0D0 */
     text-decoration: none;
-    list-style: none;
-}
-
-body{
-    background: #28c16f;
-    overflow: hidden;
-}
-
-.header{
-    position: fixed;
-    width: 100%;
-    padding: 40px 60px;
-}
-
-.navigation{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo{
-    font-size: 2.5rem;
     font-weight: bold;
-    color: #fff;
+    font-size: 22px;
 }
 
-.navigation ul{
+.navbar a:hover {
+    color: #ffffff;
+}
+
+/* Área de boas-vindas */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 92vh;
+    background: url(imagens/sua-imagem1.jpg) no-repeat center center/cover;
     display: flex;
     align-items: center;
-    gap: 60px;
+    justify-content: center;
+    padding-top: 60px; /* Espaço para o cabeçalho fixo */
 }
 
-.navigation ul li a{
-    color: #fff;
-    font-size: 1.2rem;
-    transition: all .1s ease;
-}
-
-.navigation ul li a:hover{
-    border-bottom: 3px solid #fff;
-}
-
-.main{
-    overflow: hidden;
-}
-
-.section{
-    padding: 8rem;
-    height: 100vh;
-
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* 808080 */
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.left{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.hero h1 {
+    font-size: 48px;
+    text-align: center;
 }
 
-.left p{
-    font-size: 2.2rem;
-    color: #fff;
-    margin-bottom: 10px;
+.hero h1 span {
+    color: #1E90FF; /* 40E0D0 */
 }
 
-.left h4{
-    font-size: 3.5rem;
-    color: #0015ff; /* 1c683f */
-    margin-bottom: 3rem;
-}
-
-.btn{
-    padding: 1.5rem 5rem;
-    background: #1c683f;
-    border-radius: 15px;
-    color: #fff;
-    font-size: 1.2rem;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.btn:hover{
-    box-shadow: 0 1px 4px #1c683f;
-}
-
-.right img{
-    width: 500px;
-    margin-bottom: 1rem;
-    animation: float 1.8s infinite alternate;
-}
-
-.shadow{
-    width: 450px;
-    height: 45px;
-    background: hsla(38, 21%, 19%, .16);
-    border-radius: 50%;
+/* Seção Sobre */
+.sobre {
+    padding: 40px 140px;
     margin: 0 auto;
-    filter: blur(5px);
-    animation: shadow 1.8s infinite alternate;
+    background-color: #363636;
+    color: #fff;
+    text-align: justify; /* Alinha o texto de forma justificada */
+    /* height: 90vh; */
 }
 
-@keyframes float{
-    0%{
-        transform: translateY(0);
+.sobre h2 {
+    font-size: 36px;
+    text-indent: 30px;
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    font-size: 20px;
+    line-height: 1.6;
+    text-indent: 50px;
+}
+
+.sobre .atencao {
+    color: #ff0000;
+}
+
+.sobre p span {
+    color: #1E90FF; /* 40E0D0 */
+    font-weight: bold;
+}
+
+/* Animação para a seção "Sobre" */
+.sobre.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sobre.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Seção de vídeos */
+.videos {
+    padding: 100px 20px 50px 20px;
+    text-align: center;
+}
+
+/* Cada item de vídeo */
+.video-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.video-item ul {
+    display: flex;
+    flex-direction: column; /* Empilha as li verticalmente */
+    gap: 20px; /* Define o espaçamento entre as li */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.video-item li {
+    flex: 0 0 auto; /* Garante que as li não vão se expandir */
+}
+
+.video-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.video-item .video {
+    flex: 1 1 500px;
+}
+
+.video-item .info {
+    flex: 1 1 300px;
+    text-align: left;
+}
+
+/* 
+.video-item iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border-radius: 10px;
+} */
+
+iframe {
+    width: 100%;
+    height: auto;
+    max-width: 80%;  /* Faz com que o iframe ocupe toda a largura disponível */
+    aspect-ratio: 16/9;  /* Mantém a proporção do vídeo */
+}
+
+
+/* Rodapé */
+.rodape {
+  background-color: #363636;
+  color: #ccc;
+  padding: 20px 10px;
+  font-size: 16px;
+  /* border-top: 1px solid #4F4F4F; */
+}
+
+.container-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto 10px;
+}
+
+.logo-e-nome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.logo-rodape {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.links-sociais a {
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.links-sociais img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.links-sociais img:hover {
+  transform: scale(1.1);
+}
+
+.direitos {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* Responsividade geral para telas menores */
+@media (max-width: 991px) { /* Laptops pequenos / tablets paisagem */
+    html {
+        font-size: 55%;
     }
-    100%{
-        transform: translateY(15px);
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 2rem;
     }
 }
 
-@keyframes shadow{
-    0%{
-        transform: scale(1.1);
+/* Responsividade para telas médias (tablets e dispositivos móveis) */
+@media (max-width: 768px) { /* Tablets e celulares grandes */
+    .navbar nav {
+        flex-direction: column; /* Alinha os itens do menu verticalmente */
+        gap: 20px;
     }
-    100%{
-        transform: scale(.85,.85);
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os links do menu */
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .navbar a {
+        font-size: 12px; /* Ajusta o tamanho da fonte */
+    }
+
+    .hero h1 {
+        font-size: 32px /* 3rem; /* Ajusta o tamanho do título */
+    }
+
+    .sobre {
+        padding: 30px 20px;
+        /*
+        padding: 2rem;
+        margin-bottom: 2rem; /* Garante espaçamento abaixo da seção "Sobre" */
+    }
+
+    /* Ajustando a seção de vídeos */
+    .videos {
+        padding: 50px 20px; /* Ajuste do padding */
+        text-align: center;
+    }
+
+    .video-item {
+        display: block; /* Alterando para block para garantir que não fiquem lado a lado */
+        margin: 20px 0; /* Adiciona espaçamento entre os vídeos */
+        opacity: 1; /* Garante que os vídeos apareçam */
+        flex-direction: column;
+    }
+
+    .video-item .video {
+        width: 100%;
+        height: auto;
+    }
+
+    .video-item iframe {
+        width: 100%;
+        height: 300px; /* Ajustando a altura dos vídeos */
+        border-radius: 10px;
+    }
+
+    .video-item .info {
+        padding: 1rem;
+        text-align: left;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) { /* Smartphones médios/grandes */
+    .container-rodape {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os links do menu */
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .videos h2 {
+        font-size: 32px; /* Ajusta o tamanho do h2 */
+    }
+
+    .video-item iframe {
+        height: 250px; /* Ajusta a altura dos vídeos */
+    }
+
+    .video-item .info {
+        padding: 1rem; /* Ajusta o padding para telas pequenas */
+    }
+
+    /* AUMENTAR textos da seção de vídeos */
+
+    .videos h2 {
+        font-size: 32px; /* Ajusta o tamanho do h2 */
+    }
+    
+    .video-item .info h3 {
+        font-size: 20px !important; /* Aumenta o título do vídeo */
+    }
+
+    .video-item .info p {
+        font-size: 20px !important; /* Aumenta os parágrafos */
+    }
+
+    .video-item .info ul {
+        font-size: 20px !important; /* Aumenta a lista de tópicos */
+    }
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 450px) { /* Smartphones pequenos */
+    html {
+        font-size: 50%;
+    }
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os links do menu */
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Ajusta ainda mais o tamanho do título */
+    }
+
+    .navbar a {
+        font-size: 50px; /* Ajusta o tamanho da fonte do menu - 18px - 30px*/
+    }
+
+    .navbar nav {
+        flex-direction: row; /* continua linha */
+        flex-wrap: wrap; /* pode quebrar se faltar espaço */
+        justify-content: center;
+    }
+
+    .navbar ul {
+        flex-direction: row; /* continua linha */
+        flex-wrap: wrap; /* quebra para segunda linha se necessário */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .sobre p {
+        font-size: 18px; /* Ajusta o tamanho do texto na seção "Sobre" */
+    }
+
+    .videos h2 {
+        font-size: 32px; /* Ajusta o tamanho do h2 */
+    }
+
+    .video-item iframe {
+        height: 250px; /* Ajusta a altura dos vídeos */
+    }
+
+    .video-item .info {
+        padding: 1rem; /* Ajusta o padding para telas pequenas */
+    }
+
+    /* AUMENTAR textos da seção de vídeos */
+    .video-item .info h3 {
+        font-size: 48px !important; /* Aumenta o título do vídeo */
+    }
+
+    .video-item .info p {
+        font-size: 22px !important; /* Aumenta os parágrafos */
+    }
+
+    .video-item .info ul {
+        font-size: 22px !important; /* Aumenta a lista de tópicos */
     }
 }
